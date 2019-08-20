@@ -17,7 +17,8 @@ by creators of server platforms (MQTT, Node Red and MongoDB in our case). Unfort
 
 ### New installation
 
-From version 1.2.0 server requires document database - MongoDB. To migrate check [Migrate from version prior 1.2.0](#migrate-from -version-prior-1.2.0)
+From version 1.2.0 server requires document database - MongoDB. To migrate check [Migrate from version prior 1.2.0](#migrate-from-version-prior-1.2.0)
+
 0. Clone/get repository 
    ```
    git clone https://github.com/bsorgo/beegl_server
