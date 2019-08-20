@@ -17,8 +17,11 @@ by creators of server platforms (MQTT, Node Red and MongoDB in our case). Unfort
 
 ### New installation
 
-From version 1.2.0 server requires document database - MongoDB. To migrate check 
-
+From version 1.2.0 server requires document database - MongoDB. To migrate check [Migrate from version prior 1.2.0](#migrate-from -version-prior-1.2.0)
+0. Clone/get repository 
+   ```
+   git clone https://github.com/bsorgo/beegl_server
+   ````
 1. MQTT
   - Install MQTT server [Eclipse Mosquitto](https://mosquitto.org/). There are many instructions on internet. [This one](http://www.steves-internet-guide.com/install-mosquitto-linux/) is quite good for linux. Or 
   - use/install any other MQTT 3.1.1 compatible MQTT server
@@ -66,7 +69,7 @@ From version 1.2.0 server requires document database - MongoDB. To migrate check
 
 <img src="https://thingiverse-production-new.s3.amazonaws.com/assets/7f/aa/e4/93/b1/Node-RED_Dashboard.png" width="800"/>
 
-### Migrate from <1.2.0
+### Migrate from versions prior 1.2.0
 
 1. Execute steps 2, 3, 4, 5 and 6 as described in [New installation](#new-installation)
 2. Migrate data to mongodb database by executing migrate_to_mongodb.js. The script reads node red flow.json file to obtain devices and log.txt file to obtain measurements. Change file locations (--flowcontext, --logfile), connection parameters, credentials (-dburl) and database name (-dbname) accordingly
