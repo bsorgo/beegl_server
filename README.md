@@ -43,10 +43,9 @@ From version 1.2.0 server requires document database - MongoDB. To migrate check
 	  }
 	)
 	```
-3. In beegl_server directory execute npm install --production. This will install necessary libraries 
+3. In `node-red/beegl_server` directory execute `npm install --production`. This will install necessary libraries 
 4. Execute database schema script: create_mongodb_schema.js . It will create collection schema and required indexes. Change connection parameters, credentials (-dburl) and database name (-dbname) accordingly
     ``` 
-    cd beegl/node-red/beegl-server
     node ./create_mongodb_schema.js --dburl mongodb://beegl:abc123@localhost:27017/beegl --dbname beegl 
     ```	
 5. Install node red - [Getting Started](https://nodered.org/docs/getting-started/). To highlight few of them:
@@ -54,7 +53,7 @@ From version 1.2.0 server requires document database - MongoDB. To migrate check
   - [Raspberry PI installation](https://nodered.org/docs/getting-started/raspberrypi)
   
   Don't forget to secure node server with setting username and password. Unfortunately current version of BeeGl Broker supports only http communication. 
-6. In .node-red home directory install required components:
+6. In `.node-red` home directory install required components:
   - [node-red-dashboard](https://flows.nodered.org/node/node-red-dashboard)
   - [node-red-contrib-mongodb3](https://www.npmjs.com/package/node-red-contrib-mongodb3)
 
