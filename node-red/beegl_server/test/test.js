@@ -110,7 +110,7 @@ describe("HTTP Devices", function () {
 
 describe("HTTP Measurements", function () {
 
-    beforeEach(done => setTimeout(done, 2000));
+    beforeEach(done => setTimeout(done, 3000));
     before(function (done) {
         server
             .post("/beegl/v1/devices/BEETTT")
@@ -207,6 +207,28 @@ describe("HTTP Measurements", function () {
         it("should get measurements with page & size", function (done) {
             server
                 .get("/beegl/v1/measurements?deviceId=BEETTT&pageNo=2&size=1")
+                .expect(200)
+                .end(function (err, res) {
+                    res.status.should.equal(200);
+                    res.body.should.have.length(1);
+                    done();
+                });
+
+        });
+        it("should get measurements with timeFrom", function (done) {
+            server
+                .get("/beegl/v1/measurements?deviceId=BEETTT&timeFrom=2017-05-18T16:01:30Z")
+                .expect(200)
+                .end(function (err, res) {
+                    res.status.should.equal(200);
+                    res.body.should.have.length(1);
+                    done();
+                });
+
+        });
+        it("should get measurements with timeFrom & timeTo", function (done) {
+            server
+                .get("/beegl/v1/measurements?deviceId=BEETTT&timeFrom=2017-05-18T16:01:00Z&timeTo=2017-05-18T16:01:30Z&")
                 .expect(200)
                 .end(function (err, res) {
                     res.status.should.equal(200);
